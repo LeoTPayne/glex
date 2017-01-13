@@ -39,7 +39,7 @@ void Draw(const std::shared_ptr<SDL_Window> window, const std::shared_ptr<GameWo
   glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 
   game_world->Draw();
-
+	
   // Don't forget to swap the buffers
   SDL_GL_SwapWindow(window.get());
 }
