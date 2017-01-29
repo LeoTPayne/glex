@@ -21,6 +21,7 @@ GameAssetManager::GameAssetManager(ApplicationMode mode) {
   };
 
   program_token = CreateGLProgram(vertex_shader, fragment_shader);
+  camera = std::make_shared<Camera>();
 }
 
 /**
@@ -67,7 +68,6 @@ void GameAssetManager::AddAsset(std::shared_ptr<GameAsset> the_asset) {
  */
 void GameAssetManager::Draw() {
 
-	auto camera = std::make_shared<camera>();
 	glm::mat4 c = camera->getViewMatrix();
 	
 	gluint view token = glGetuniformlocation(program token,"view");

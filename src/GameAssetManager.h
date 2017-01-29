@@ -12,6 +12,7 @@
 
 #include "common.h"
 #include "GameAsset.h"
+#include "Camera.h"
 
 /**
  * GameAssetManager is a container for GameAssets.  It also provides utility
@@ -33,7 +34,7 @@ class GameAssetManager {
   GLuint CreateGLESShader(GLenum, std::string &);
   // As this is private and we're writing to the GPU, we will use raw pointers.
   std::pair<GLchar *, GLint>  ReadShader(std::string &);
-
+  std::shared_ptr<Camera> camera;
   // The internal scene graph is a simple list.
   std::vector<std::shared_ptr<GameAsset>> draw_list;
   GLuint program_token;
