@@ -1,5 +1,7 @@
 #include "Boundingbox.h"
 
+// I changed from ints to floats due to the fact it alows for more precision, and i have changed vector and pointers due to the fact I have changed from 2D to 3D which done by adding a third dimension to all the previous code through the use of a Z axis.
+
 BoundingBox::BoundingBox(const Vector3 centre,
 			     const float width,
 			     const float height,

@@ -12,7 +12,7 @@ using namespace std;
 #include "Boundingbox.h"
 #include "Boundingbox.cc"
 
-  
+ // This piece of code is testing the bounding boxs collision which is being forced to happen by making B1 and B2 collide
 BOOST_AUTO_TEST_CASE(Boundingbox)
 {
     auto b1 = make_shared<BoundingBox>(BoundingBox(Vector3(0.0f, 0.0f, 0.0f), 0.5f, 0.5f, 0.5f));
