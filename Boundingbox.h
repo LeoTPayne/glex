@@ -4,12 +4,17 @@
 #include <memory>
 #include <utility>
 #include <ostream>
+#include <glm/vec3.hpp>
 
 using namespace std;
 
 #include "Math.h"
 
 enum AXIS {X, Y, Z};
+
+static glm::vec3 HalfX = glm::vec3(1.0, 0.0, 0.0);
+static glm::vec3 HalfY = glm::vec3(0.0, 1.0, 0.0);
+static glm::vec3 HalfZ = glm::vec3(0.0, 0.0, 1.0);
 
 class BoundingBox {
 public:
@@ -24,7 +29,7 @@ private:
 
   pair<float,float> projectOntoAxis(const BoundingBox &, enum AXIS);
 
-  friend class SFAsset;
+
   friend ostream& operator<<(ostream &, const BoundingBox &);
 };
 
