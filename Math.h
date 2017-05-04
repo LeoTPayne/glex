@@ -6,7 +6,7 @@
  */
 class Vector3 {
 public:
-  inline Vector3(const float, const float);
+  inline Vector3(const float, const float, const float);
   inline Vector3(const Vector3 &);
   inline const float getX() const;
   inline const float getY() const;
@@ -19,9 +19,9 @@ private:
   float m_x, m_y, m_z;
 };
 
-inline Vector3::Vector3 (const float x, const float y,const float z) : m_x(x), m_y(y), m_y(z) {}
+inline Vector3::Vector3 (const float x, const float y,const float z) : m_x(x), m_y(y), m_z(z) {}
 
-inline Vector3::Vector3 (const Vector3 &v) : m_x(v.m_x), m_y(v.m_y), m_y(v.m_z) {}
+inline Vector3::Vector3 (const Vector3 &v) : m_x(v.m_x), m_y(v.m_y), m_z(v.m_z) {}
 
 inline const float Vector3::getX() const {
   return m_x;
@@ -36,11 +36,14 @@ inline const float Vector3::getZ() const {
 }
 
 inline const Vector3 Vector3::operator +( const Vector3 & vec ) const {
-  return Vector3(
+  return Vector3
+(
 		 m_x + vec.m_x,
 		 m_y + vec.m_y,
-		 m_z + vec.m_z,
-		 );
+		 m_z + vec.m_z
+		 
+);
+
 }
 
 inline const Vector3 Vector3::operator *( float scalar ) const {
@@ -54,11 +57,11 @@ inline const Vector3 Vector3::operator *( float scalar ) const {
 /**
  * A Point representation somewhat in the style of the IBM/Sony Vectormath library.
  */
-class Point2 {
+class Point3 {
 public:
-  inline Point2(const float, const float);
-  inline Point2(const Vector3 &);
-  inline Point2(const Point2 &);
+  inline Point3(const float, const float, const float);
+  inline Point3(const Vector3 &);
+  inline Point3(const Point3 &);
   inline const float getX() const;
   inline const float getY() const;
   inline const float getZ() const;
@@ -66,21 +69,21 @@ private:
   float m_x, m_y, m_z;
 };
 
-inline Point2::Point2 (const float x, const float y,const float z) : m_x(x), m_y(y), m_y(z) {}
+inline Point3::Point3 (const float x, const float y,const float z) : m_x(x), m_y(y), m_z(z) {}
 
-inline Point2::Point2 (const Vector3 & v) : m_x(v.getX()), m_y(v.getY(), m_z(v.getZ()) {}
+inline Point3::Point3 (const Vector3 & v) : m_x(v.getX()), m_y(v.getY()), m_z(v.getZ()) {}
 
-inline Point2::Point2 (const Point2 & p) : m_x(p.m_x), m_y(p.m_y), m_z(p.m_z) {}
+inline Point3::Point3 (const Point3 & p) : m_x(p.m_x), m_y(p.m_y), m_z(p.m_z) {}
 
-inline const float Point2::getX() const {
+inline const float Point3::getX() const {
   return m_x;
 }
 
-inline const float Point2::getY() const {
+inline const float Point3::getY() const {
   return m_y;
 }
 
-inline const float Point2::getZ() const {
+inline const float Point3::getZ() const {
   return m_z;
 }
 

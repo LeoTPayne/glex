@@ -13,14 +13,14 @@ enum AXIS {X, Y, Z};
 
 class BoundingBox {
 public:
-  BoundingBox(const Vector2, const int, const int);
+  BoundingBox(const Vector3, const float, const float, const float);
   virtual ~BoundingBox();
-  void SetCentre(Vector2 &);
+  void SetCentre(Vector3 &);
 
   bool CollidesWith(const shared_ptr<BoundingBox>);
 
 private:
-  shared_ptr<Vector2> centre, extent_x, extent_y,extent_z;
+  shared_ptr<Vector3> centre, extent_x, extent_y,extent_z;
 
   pair<float,float> projectOntoAxis(const BoundingBox &, enum AXIS);
 
